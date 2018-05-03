@@ -1,0 +1,261 @@
+::-webkit-scrollbar-track {
+  background-color: #F5F5F5;
+}
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background-color: #F5F5F5;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #999;
+}
+body {
+  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: #333333;
+  background-color: #f3f3f4;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #333333;
+}
+a:hover {
+  text-decoration: none;
+}
+html,
+body,
+.page-middle,
+.left-sidebar {
+  height: 100%;
+}
+.head-navigation {
+  height: 40px;
+  line-height: 40px;
+  display: flex;
+  color: #999;
+  position: fixed;
+  width: 100%;
+  padding: 0 45px;
+  z-index: 5;
+  font-weight: bold;
+}
+.head-navigation .head-title {
+  flex: 1;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 800;
+}
+.head-navigation .head-profile a {
+  height: 15px;
+  line-height: 15px;
+  border-right: 2px solid #999;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 50px;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  color: #999;
+}
+.head-navigation .head-profile a:last-child {
+  border-right: 0;
+  text-align: center;
+}
+.head-navigation .head-logo {
+  color: #333;
+  font-size: 15px;
+}
+.head-navigation .head-logo img {
+  width: 20px;
+  margin: 0 8px 5px 0;
+}
+.page-middle {
+  padding-top: 87px;
+  margin: 0 0 0 220px;
+  position: relative;
+}
+.page-middle .right-menu {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  border-bottom: solid 2px #1ab394;
+  position: absolute;
+  top: 40px;
+  z-index: 5;
+  padding: 0 35px;
+  background: #e5e5e5;
+  /* 一些不支持背景渐变的浏览器 */
+  background: -webkit-linear-gradient(#fff, #e6e6e6);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#fff, #e6e6e6);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#fff, #e6e6e6);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(#fff, #e6e6e6);
+  /* 标准的语法（必须放在最后） */
+}
+.page-middle .right-menu ul {
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  -webkit-text-size-adjust: none;
+}
+.page-middle .right-menu ul li {
+  display: inline-block;
+  font-size: 15px;
+  width: 110px;
+  height: 45px;
+  font-weight: bold;
+  line-height: 45px;
+  padding: 0;
+  text-align: center;
+}
+.page-middle .right-menu ul li a {
+  display: block;
+  color: #999;
+  text-decoration: none;
+}
+.page-middle .right-menu ul li .active {
+  background: #1ab394;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+.page-middle .right-menu .tabs-scroller-right {
+  position: absolute;
+  right: 0;
+  height: 45px;
+  line-height: 45px;
+  width: 35px;
+  text-align: center;
+  color: #999;
+  border-left: solid 1px #d3d3d3;
+  cursor: pointer;
+  background: #e5e5e5;
+  /* 一些不支持背景渐变的浏览器 */
+  background: -webkit-linear-gradient(#fff, #e6e6e6);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#fff, #e6e6e6);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#fff, #e6e6e6);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(#fff, #e6e6e6);
+  /* 标准的语法（必须放在最后） */
+  z-index: 5;
+}
+.page-middle .right-menu .tabs-scroller-right:hover {
+  background: #1ab394;
+  color: #fff;
+}
+.page-middle .right-menu .tabs-scroller-left {
+  position: absolute;
+  left: 0;
+  height: 45px;
+  line-height: 45px;
+  width: 35px;
+  text-align: center;
+  color: #999;
+  border-right: solid 1px #d3d3d3;
+  cursor: pointer;
+  background: #e5e5e5;
+  /* 一些不支持背景渐变的浏览器 */
+  background: -webkit-linear-gradient(#fff, #e6e6e6);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#fff, #e6e6e6);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#fff, #e6e6e6);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(#fff, #e6e6e6);
+  /* 标准的语法（必须放在最后） */
+  z-index: 5;
+}
+.page-middle .right-menu .tabs-scroller-left:hover {
+  background: #1ab394;
+  color: #fff;
+}
+.page-middle .right-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.left-sidebar {
+  position: fixed;
+  top: 40px;
+  width: 220px;
+  z-index: 1;
+  background-color: #2f4050;
+  /* 菜单栏 */
+}
+.left-sidebar .left-sidebar-nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+  list-style: none;
+}
+.left-sidebar .left-sidebar-nav li {
+  position: relative;
+  display: block;
+  /* 次级菜单 */
+  /*分隔行*/
+}
+.left-sidebar .left-sidebar-nav li.active {
+  background: #293846;
+}
+.left-sidebar .left-sidebar-nav li.active > a {
+  color: white;
+  border-left: 3px solid #1ab394;
+}
+.left-sidebar .left-sidebar-nav li.active > a > .fa.nav-arrow:before {
+  content: "\F107";
+}
+.left-sidebar .left-sidebar-nav li a {
+  display: block;
+  color: #a7b1c2;
+  padding: 10px 15px;
+  line-height: 20px;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  /* 箭头 */
+}
+.left-sidebar .left-sidebar-nav li a:hover {
+  background-color: #293846;
+  color: #fff;
+}
+.left-sidebar .left-sidebar-nav li a .nav-icon {
+  position: relative;
+  top: 2px;
+  margin: 0 6px 0 -3px;
+  font-size: 16px;
+  line-height: 14px;
+}
+.left-sidebar .left-sidebar-nav li a .nav-icon img {
+  width: 16px;
+  height: 16px;
+  vertical-align: top;
+}
+.left-sidebar .left-sidebar-nav li a .fa.nav-arrow {
+  float: right;
+  margin-top: 2px;
+}
+.left-sidebar .left-sidebar-nav li a .fa.nav-arrow:before {
+  content: "\F104";
+}
+.left-sidebar .left-sidebar-nav li ul {
+  display: none;
+  padding: 0 0 0 19px;
+}
+.left-sidebar .left-sidebar-nav li ul.collapsing,
+.left-sidebar .left-sidebar-nav li ul.collapse.in {
+  display: block;
+  background: #293846;
+}
+.left-sidebar .left-sidebar-nav li .sep {
+  padding: 12px 15px;
+  display: block;
+  color: #6b7c98;
+}
+
+/*# sourceMappingURL=index.min.css.map*/

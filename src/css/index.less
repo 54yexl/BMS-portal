@@ -1,0 +1,271 @@
+//滚动条 美化
+::-webkit-scrollbar-track {
+  background-color: #F5F5F5
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background-color: #F5F5F5
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #999
+}
+
+body {
+  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: #333333;
+  background-color: #f3f3f4;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #333333;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+html, body, .page-middle, .left-sidebar {
+  height: 100%;
+}
+
+//头部导航
+.head-navigation{
+    height: 40px;
+    line-height: 40px;
+    display: flex;
+    // background: #2f4050;
+    color: #999;
+    position: fixed;
+    width: 100%;
+    padding: 0 45px;
+    z-index: 5;
+    font-weight: bold;
+    & .head-title{
+        flex: 1;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 800;
+    }
+    & .head-profile{
+        & a{
+            height: 15px;
+            line-height: 15px;
+            border-right: 2px solid #999;
+            box-sizing: border-box;
+            display: inline-block;
+            width: 50px;
+            text-align: left;
+            font-size: 14px;
+            cursor: pointer;
+            color: #999;
+        }
+        & a:last-child{
+            border-right:0;
+            text-align: center;
+        }
+    }
+    & .head-logo{
+        color: #333;
+        font-size: 15px;
+        & img{
+          width: 20px;
+          margin:0 8px 5px 0;
+        }
+    }
+}
+//包装器
+.page-middle{
+    padding-top: 87px;
+    margin: 0 0 0 220px;
+    position: relative;
+    //右侧菜单栏
+    .right-menu{
+        display: block;
+        overflow:hidden;
+        width: 100%;
+        white-space: nowrap;
+        // position: fixed;
+        // top: 40px;
+        // left: 0;
+        border-bottom: solid 2px #1ab394;
+        position: absolute;
+        top: 40px;
+        z-index: 5;
+        padding: 0 35px;
+        background:#e5e5e5; /* 一些不支持背景渐变的浏览器 */  
+        background: -webkit-linear-gradient(#fff, #e6e6e6); /* Safari 5.1 - 6.0 */
+        background: -o-linear-gradient(#fff, #e6e6e6); /* Opera 11.1 - 12.0 */
+        background: -moz-linear-gradient(#fff, #e6e6e6); /* Firefox 3.6 - 15 */
+        background: linear-gradient(#fff, #e6e6e6); /* 标准的语法（必须放在最后） */
+        & ul{
+            margin: 0;
+            padding: 0;
+            font-size: 0;
+            -webkit-text-size-adjust:none;
+            & li{
+                display: inline-block;
+                font-size: 15px;
+                width: 110px;
+                height: 45px;
+                font-weight: bold;
+                line-height: 45px;
+                padding: 0;
+                text-align: center;
+                & a{
+                    display: block;
+                    color: #999;
+                    text-decoration: none;
+                }
+                & .active{
+                    background: #1ab394;
+                    color: #fff;
+                    position: relative;
+                    z-index: 1;
+                }
+            }
+        }
+        & .tabs-scroller-right{
+            position: absolute;
+            right: 0;
+            height: 45px;
+            line-height: 45px;
+            width: 35px;
+            text-align: center;
+            color: #999;
+            border-left:solid 1px #d3d3d3;
+            cursor: pointer;
+            background:#e5e5e5; /* 一些不支持背景渐变的浏览器 */  
+            background: -webkit-linear-gradient(#fff, #e6e6e6); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(#fff, #e6e6e6); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(#fff, #e6e6e6); /* Firefox 3.6 - 15 */
+            background: linear-gradient(#fff, #e6e6e6); /* 标准的语法（必须放在最后） */
+            z-index: 5;
+            &:hover{
+              background: #1ab394;
+              color: #fff;
+            }
+        }
+        & .tabs-scroller-left{
+            position: absolute;
+            left: 0;
+            height: 45px;
+            line-height: 45px;
+            width: 35px;
+            text-align: center;
+            color: #999;
+            border-right:solid 1px #d3d3d3;
+            cursor: pointer;
+            background:#e5e5e5; /* 一些不支持背景渐变的浏览器 */  
+            background: -webkit-linear-gradient(#fff, #e6e6e6); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(#fff, #e6e6e6); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(#fff, #e6e6e6); /* Firefox 3.6 - 15 */
+            background: linear-gradient(#fff, #e6e6e6); /* 标准的语法（必须放在最后） */
+            z-index: 5;
+            &:hover{
+                // background: #f3f4f4;
+                background: #1ab394;
+                color: #fff;
+            }
+        }
+        // & .right-menu-bar-bottom{
+        //     // border-bottom: solid 2px #1ab394;
+        //     position: absolute;
+        //     left: 0;
+        //     bottom: 0;
+        //     width: 100%;
+        //     height: 4px;
+        //     background-color: #1ab394;
+        //     border: 1px solid #04a181;
+        //     border-width: 1px 0;
+        // }
+    }
+    & .right-container{
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+}
+// 左侧边栏
+.left-sidebar{
+    position: fixed;
+    top:40px;
+    width: 220px;
+    z-index: 1;
+    background-color: #2f4050;
+     /* 菜单栏 */
+  & .left-sidebar-nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    font-size: 14px;
+    list-style: none;
+    li {
+      position: relative;
+      display: block;
+      &.active {
+        background: #293846;
+        > a {
+          color: white;
+          // border-left: 3px solid #307095;
+          border-left: 3px solid #1ab394;
+          > .fa.nav-arrow:before {
+            content: "\f107";
+          }
+        }
+      }
+      a {
+        display: block;
+        color: #a7b1c2;
+        padding: 10px 15px;
+        line-height: 20px;
+        text-decoration: none;
+        border-left: 3px solid transparent;
+        &:hover {
+          background-color: #293846;
+          color: #fff;
+        }
+        .nav-icon {
+          position: relative;
+          top: 2px;
+          margin: 0 6px 0 -3px;
+          font-size: 16px;
+          line-height: 14px;
+          img {
+            width: 16px;
+            height: 16px;
+            vertical-align: top;
+          }
+        }
+        /* 箭头 */
+        .fa.nav-arrow {
+          float: right;
+          margin-top: 2px;
+          &:before {
+            content: "\f104";
+          }
+        }
+      }
+      /* 次级菜单 */
+      ul {
+        display: none;
+        padding: 0 0 0 19px;
+        &.collapsing, &.collapse.in {
+          display: block;
+          background: #293846;
+        }
+      }
+      /*分隔行*/
+      .sep {
+        padding: 12px 15px;
+        display: block;
+        color: darken(#a7b1c2, 20%);
+      }
+    }
+  }
+}
+
