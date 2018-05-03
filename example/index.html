@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>BMS 后台模板</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="http://static.dev.zhixike.net/lib/bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet">
+    <link href="http://static.dev.zhixike.net/lib/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../dist/1.0.0/index.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!--头部导航开始-->
+    <div class="head-navigation">
+        <div class="head-logo">
+            <img src="./logo2.png"/>
+            <span>运营管理后台</span>
+        </div>
+        <div class="head-title"></div>
+        <!--个人信息-->
+        <div class="head-profile">
+            <a href="profile.html">admin</a>
+            <a href="logout.html">退出</a>
+        </div>
+    </div>
+    <!--头部导航结束-->
+    <!--左侧导航开始-->
+    <div class="left-sidebar">
+        <!--菜单栏-->
+        <div class="left-menu"></div>
+    </div>
+    <!--左侧导航结束-->
+    <!--内嵌页开始-->
+    <div class="page-middle">
+        <!--右侧menu开始-->
+        <div class="right-menu">
+            <div class="fa fa-backward tabs-scroller-left"></div>
+            <div class="fa fa-forward tabs-scroller-right"></div>
+            <ul>
+            </ul>
+        </div>
+        <!--右侧menu结束-->
+        <div class="right-container"></div>
+    </div>
+    <!--内嵌页结束-->
+<script src="http://static.dev.zhixike.net/lib/jquery/jquery-1.12.0.min.js"></script>
+<script id='script' src="http://static.dev.zhixike.net/lib/bootstrap-3.3.7/js/bootstrap.js"></script>
+<script src="../dist/1.0.0/index.min.js"></script>
+<script>
+    var rightmenujson=[
+        {
+            title: "用户中心",
+            url: 'url-3.html',
+            id:'abc'
+        },
+        {
+            title: "设备中心",
+            url: 'url-2.html',
+            id:'abcd'
+        },
+        {
+            title: "电商中心",
+            url: 'url-1.html',
+            id:'abcde'
+        },
+        {
+            title: "校园管理",
+            url: 'url-1.html',
+            id:'abcdef'
+        },
+        {
+            title: "套餐管理",
+            url: 'url-1.html',
+            id:'abcdefg'
+        },
+        {
+            title: "财务管理",
+            url: 'url-1.html',
+            id:'abcdefgh'
+        },
+        {
+            title: "数据报表",
+            url: 'url-1.html',
+            id:'abcdefghi'
+        },
+        {
+            title: "系统管理",
+            url: 'url-1.html',
+            id:'abcdefghijk'
+        },
+        {
+            title: "校园管理11",
+            url: 'url-1.html',
+            id:'12'
+        },
+        {
+            title: "套餐管11",
+            url: 'url-1.html'
+        },
+        {
+            title: "财务管11",
+            url: 'url-1.html',
+            id:'123'
+        },
+        {
+            title: "数据报11",
+            url: 'url-1.html',
+            id:'1234'
+        },
+        {
+            title: "系统管11",
+            url: 'url-1.html',
+            id:'132'
+        },
+        {
+            title: "校园管22",
+            url: 'url-1.html',
+            id:'1324'
+        },
+        {
+            title: "套餐管22",
+            url: 'url-1.html',
+            id:'1245'
+        },
+        {
+            title: "财务管22",
+            url: 'url-1.html',
+            id:'1256'
+        },
+        {
+            title: "数据报22",
+            url: 'url-1.html',
+            id:'15432'
+        },
+        {
+            title: "系统管22",
+            url: 'url-1.html',
+            id:'165462'
+        }
+    ]
+    rightmenu.initMenu(rightmenujson);
+    //点击右侧菜单动态添加左侧菜单
+    $('body').on('click', '.right-menu>ul>li>a', function () {
+        var leftmenujson = [
+            {
+                title: '一级菜单',
+                icon: "fa fa-th-large",
+                url: 'url-1.html'
+            }
+        ];
+        openIframe(leftmenujson[0].url)
+        initLeftMenu(leftmenujson);
+    });
+    function initLeftMenu(leftmenujson){
+        if(!leftmenujson){
+            var leftmenujson = [
+                {
+                    title: "一级菜单",
+                    icon: "fa fa-th-large",
+                    items: [
+                        {url: 'url-2.html', title: '二级菜单'},
+                        {url: 'url-2.html', title: '二级菜单'},
+                        {url: 'url-2.html', title: '二级菜单'},
+                        {url: 'url-2.html', title: '二级菜单'}
+                    ]
+                }, {
+                    title: '一级菜单',
+                    icon: "fa fa-th-large",
+                    active:true,
+                    items: [
+                        {
+                            url: 'url-2.html', title: "二级菜单", items: [
+                                {url: 'url-3.html', title: '三级菜单',icon:'nav-icon fa fa-link'},
+                                {url: 'url-3.html', title: '三级菜单'},
+                                {url: 'url-3.html', title: '三级菜单'}
+                            ],
+                            active:true//三级菜单展开则一级菜单与二级菜单都要加active
+                        },
+                        {url: 'url-2.html', title: '二级菜单'},
+                        {url: 'url-2.html', title: '二级菜单'},
+                        {url: 'url-2.html', title: '二级菜单'},
+                        {url: 'url-2.html', title: '二级菜单'}
+                    ]
+                }
+            ];
+        }
+        leftmenu.initMenu(leftmenujson);
+    }
+    
+    initLeftMenu();
+    //点击右侧菜单
+
+    //异步默认打开第一个iframe
+    openIframe();
+
+</script>
+</body>
+</html>
